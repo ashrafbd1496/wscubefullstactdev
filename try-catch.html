@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try Catch</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .trycatch {
+            display: grid;
+            background-color: brown;
+            width: 100%;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .grid-item h3,
+        #res {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="trycatch">
+        <div class=" grid-item">
+            <h3>Please Enter a number between 5 and 10</h3>
+            <input type="text" id="num" name="Num">
+            <button id="" onclick="test()">TryCatch</button>
+            <h1 id="res"> </h1>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    var num = document.getElementById('num');
+
+    function test() {
+        var data = num.value;
+        try {
+            if (isNaN(data)) {
+                throw 'This is not a number';
+
+            } else {
+                if (data < 5 || data > 10) {
+                    throw 'Number is out of range';
+
+                }
+            } else {
+                throw '';
+            }
+
+        } catch (errorMessage) {
+            document.getElementById("res").innerText = errorMessage;
+
+        } finally {
+            num.value = '';
+        }
+    }
+    test();
+</script>
+
+</html>

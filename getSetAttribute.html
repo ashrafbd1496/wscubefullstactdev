@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get Set Attribute</title>
+    <style>
+        .getsetattribe {
+            display: grid;
+            background-color: rgb(55, 14, 192);
+            width: 100%;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            text-transform: capitalize;
+        }
+        
+        .red {
+            color: red;
+        }
+        
+        .white {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="getsetattribe">
+        <div id="test" class="white">
+            <h1>javascript get and set Attribute</h1>
+        </div>
+        <button onclick="Changetextcolor()">Chnage text Color</button>
+        <h2 id="result"></h2>
+    </div>
+</body>
+<script type="text/javascript">
+    //FUNCTION FOR GETATTRIBUTE
+    var test = document.getElementById('test');
+
+    function Changetextcolor() {
+        var cls = test.getAttribute('class');
+        // document.getElementById("result").innerText = cls;
+        if (cls == 'red') {
+            test.setAttribute('class', 'white');
+        } else {
+            test.setAttribute('class', 'red');
+        }
+    }
+</script>
+
+</html>
